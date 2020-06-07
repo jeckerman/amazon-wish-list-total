@@ -210,7 +210,7 @@ const parseItem = ($item) => {
   const $editLink = selectFirstFrom($item, '[id^="itemEditLabel_"]');
 
   // If the item isn't available, attempt to use the "Used & New" price.
-  let $price = selectFirstFrom($item, '[id^="itemPrice_"]');
+  let $price = selectFirstFrom($item, '[id^="itemPrice_"] > span.a-offscreen');
   if (!$price || !$price.innerText.trim()) {
     $price = selectFirstFrom($item, '.itemUsedAndNewPrice', '[id^="used-and-new_"] span:first-of-type');
   }
